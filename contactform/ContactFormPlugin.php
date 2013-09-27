@@ -10,7 +10,7 @@ class ContactFormPlugin extends BasePlugin
 
 	function getVersion()
 	{
-		return '1.0';
+		return '1.0.1';
 	}
 
 	function getDeveloper()
@@ -29,6 +29,7 @@ class ContactFormPlugin extends BasePlugin
 			'toEmail' => array(AttributeType::Email, 'required' => true),
 			'prependSender' => array(AttributeType::String),
 			'prependSubject' => array(AttributeType::String),
+			'honeypot' => array(AttributeType::String),
 		);
 	}
 

@@ -27,3 +27,12 @@
 	value: (settings.prependSubject ? settings.prependSubject : "New message from {siteName}"|t({ siteName: craft.app.siteName })),
 	errors: settings.getErrors('prependSubject')
 }) }}
+
+{{ forms.textField({
+	label: "Honeypot Field Name"|t,
+	id: 'honeypot',
+	name: 'honeypot',
+	instructions: "The name of a field that should always be submitted empty, so we can identify robots without bothering humans. Be sure to add this field to your form!"|t,
+	value: settings.honeypot,
+	errors: settings.getErrors('honeypot')
+}) }}

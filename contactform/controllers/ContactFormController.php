@@ -24,6 +24,10 @@ class ContactFormController extends BaseController
 			Craft::log('Tried to send a contact form request, but missing the "To Email" address on the plugin’s settings page.', LogLevel::Error);
 			$this->redirectToPostedUrl();
 		}
+		elseif (!empty($settings->honeypot) AND craft()->request->getPost($settings->honeypot))
+		{
+			craft()->userSession->setError('Please leave the honeypot field empty.');
+		}
 		else
 		{
 			$message = new ContactFormModel();
